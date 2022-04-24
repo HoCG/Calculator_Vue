@@ -1,10 +1,13 @@
 <template>
   <div class="main-board">
-    <div class="board-part">
+    <div class="board-depth board-part">
       <CalculateViewer :calculate="calculate"></CalculateViewer>
     </div>
-    <div class="result-part"></div>
-    <div class="button-part">
+    <div class="board-depth result-part">
+      <ActionButton :buttonString="'AC'"></ActionButton>
+      <ActionButton :buttonString="'Enter'"></ActionButton>
+    </div>
+    <div class="board-depth button-part">
       <div class="number-part">
         <div class="board-part">
           <NumberButton v-for="buttonNumber in buttonTotal" :key="buttonNumber" :buttonIndex="buttonNumber"></NumberButton>
@@ -25,6 +28,7 @@
 </template>
 <script>
 import NumberButton from './NumberButton.vue';
+import ActionButton from './ActionButton.vue';
 import CalculateViewer from './CalculateViewer.vue';
 
 export default {
@@ -37,15 +41,14 @@ export default {
   },
   components: {
     NumberButton,
-    CalculateViewer
+    CalculateViewer,
+    ActionButton
   }
 }
 </script>
 <style lang="scss" scoped>
-.button-part{
-  display: flex;
-  justify-content: center;
-  //flex-direction: column;
+.result-part{
+
 }
 .main-board{
   display: flex;
@@ -55,14 +58,14 @@ export default {
   border-radius: 20px;
   width: 500px;
   height: 50%;
+  .board-depth{
+    display: flex;
+    justify-content: center;
+  }
 }
 .board-part{
   display: flex;
   justify-content: space-around;
-}
-.push-part{
-  display: flex;
-  justify-content: center;
 }
 .side-calculate-part{
   div{

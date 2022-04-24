@@ -25,7 +25,7 @@ export default {
   background-color: #f0f0f0;
   margin: 5px;
   border-radius: 20px;
-  width: 100px;
+  width: 210px;
   height: 40px;
   display: flex;
   justify-content: center;
