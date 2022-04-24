@@ -4,8 +4,8 @@
       <CalculateViewer :calculate="calculate"></CalculateViewer>
     </div>
     <div class="board-depth result-part">
-      <ActionButton :buttonString="'AC'"></ActionButton>
-      <ActionButton :buttonString="'Enter'"></ActionButton>
+      <ActionButton :buttonString="'AC'" :calculate="calculate"></ActionButton>
+      <ActionButton :buttonString="'Enter'" :calculate="calculate"></ActionButton>
     </div>
     <div class="board-depth button-part">
       <div class="number-part">
@@ -43,6 +43,11 @@ export default {
     NumberButton,
     CalculateViewer,
     ActionButton
+  },
+  methods: {
+    resetCalculate(){
+      this.calculate = "";
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="buttonString=='AC'" class="button">
+  <div v-if="buttonString=='AC'" @click="resetCalculate" class="button">
     AC
   </div>
   <div v-else class="button">
@@ -16,7 +16,13 @@ export default {
     }
   },
   props: {
+    calculate: String,
     buttonString: String
+  },
+  methods: {
+    resetCalculate(){
+      this.$parent.resetCalculate();
+    }
   }
 }
 </script>

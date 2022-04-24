@@ -12,7 +12,7 @@ export default {
 </script>
 <style>
 .calculate-viewer{
-  margin-block: 10px;
+  margin: 10px;
   width: 80%;
   height: 80px;
   background-color: white;
