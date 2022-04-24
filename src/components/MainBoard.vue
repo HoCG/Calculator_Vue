@@ -3,24 +3,22 @@
     <div class="board-part">
       <CalculateViewer :calculate="calculate"></CalculateViewer>
     </div>
-    <div>
-      <div class="push-part">
-        <div class="number-part">
-          <div class="board-part">
-            <NumberButton v-for="buttonNumber in buttonTotal" :key="buttonNumber" :buttonIndex="buttonNumber"></NumberButton>
-          </div>
-          <div class="board-part">
-            <NumberButton v-for="buttonNumber in buttonTotal" :key="buttonNumber+3" :buttonIndex="buttonNumber+3"></NumberButton>
-          </div>
-          <div class="board-part">
-            <NumberButton v-for="buttonNumber in buttonTotal" :key="buttonNumber+6" :buttonIndex="buttonNumber+6"></NumberButton>
-          </div>
+    <div class="result-part"></div>
+    <div class="button-part">
+      <div class="number-part">
+        <div class="board-part">
+          <NumberButton v-for="buttonNumber in buttonTotal" :key="buttonNumber" :buttonIndex="buttonNumber"></NumberButton>
         </div>
-        <div class="side-calculate-part">
-          <NumberButton v-for="buttonString in calculateButtonString" :key="buttonString" :buttonString="buttonString"></NumberButton>
+        <div class="board-part">
+          <NumberButton v-for="buttonNumber in buttonTotal" :key="buttonNumber+3" :buttonIndex="buttonNumber+3"></NumberButton>
         </div>
+        <div class="board-part">
+          <NumberButton v-for="buttonNumber in buttonTotal" :key="buttonNumber+6" :buttonIndex="buttonNumber+6"></NumberButton>
+        </div>
+        <NumberButton :buttonIndex="0"></NumberButton>
       </div>
-      <div class="result-part">
+      <div class="side-calculate-part">
+        <NumberButton v-for="buttonString in calculateButtonString" :key="buttonString" :buttonString="buttonString"></NumberButton>
       </div>
     </div>
   </div>
@@ -44,13 +42,18 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.button-part{
+  display: flex;
+  justify-content: center;
+  //flex-direction: column;
+}
 .main-board{
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-color: #c0c0c0;
   border-radius: 20px;
-  width: 50%;
+  width: 500px;
   height: 50%;
 }
 .board-part{
@@ -60,5 +63,10 @@ export default {
 .push-part{
   display: flex;
   justify-content: center;
+}
+.side-calculate-part{
+  div{
+    margin-bottom: 10px;
+  }
 }
 </style>

@@ -1,17 +1,13 @@
 <template>
-  <div class="button" :style="buttonSize">
-    {{buttonIndex}}{{buttonString}}
+  <div v-if="buttonString=='AC'" class="button">
+    AC
+  </div>
+  <div v-else class="button">
+    Enter
   </div>
 </template>
 <script>
 export default {
-  mounted(){
-    if(this.buttonIndex===0){
-      this.buttonSize = {
-        width: '320px'
-      };
-    }
-  },
   data() {
     return {
       buttonSize: {
@@ -20,7 +16,6 @@ export default {
     }
   },
   props: {
-    buttonIndex: Number,
     buttonString: String
   }
 }
