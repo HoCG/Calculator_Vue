@@ -33,6 +33,7 @@ import CalculateViewer from './CalculateViewer.vue';
 
 export default {
   data() {
+    //구조는 no1 calculateType no2 = result의 구조라고 보면된다.
     return{
       no1: 0, //계산에 쓸 첫번째값
       no2: 0, //계산에 쓸 두번째값
