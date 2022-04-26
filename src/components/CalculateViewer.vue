@@ -1,12 +1,12 @@
 <template>
   <div class="calculate-viewer">
-    {{calculate}}
+    {{input}}
   </div>
 </template>
 <script>
 export default {
   props: {
-    calculate: String
+    input: String
   }
 }
 </script>
@@ -16,5 +16,7 @@ export default {
   width: 80%;
   height: 80px;
   background-color: white;
+  text-align: center;
+  justify-content: center;
 }
 </style>

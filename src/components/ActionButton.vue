@@ -2,7 +2,7 @@
   <div v-if="buttonString=='AC'" @click="resetCalculate" class="button">
     AC
   </div>
-  <div v-else class="button">
+  <div v-else class="button" @click="showResult">
     Enter
   </div>
 </template>
@@ -20,8 +20,11 @@ export default {
     buttonString: String
   },
   methods: {
-    resetCalculate(){
+    resetCalculate() {
       this.$parent.resetCalculate();
+    },
+    showResult() {
+      this.$parent.showResult();
     }
   }
 }

@@ -1,12 +1,12 @@
 <template>
-  <div class="button" :style="buttonSize">
-    {{buttonIndex}}{{buttonString}}
+  <div class="button" :style="buttonSize" @click="pushClickInfo">
+    {{buttonNumber}}{{buttonString}}
   </div>
 </template>
 <script>
 export default {
   mounted(){
-    if(this.buttonIndex===0){
+    if(this.buttonNumber===0){
       this.buttonSize = {
         width: '320px'
       };
@@ -19,9 +19,18 @@ export default {
       },
     }
   },
+  methods: {
+    pushClickInfo() {
+      if(this.buttonType=="Number" )
+        this.$parent.numSet(this.buttonNumber);
+      else
+        this.$parent.calculateMiddle(this.buttonString);
+    }
+  },
   props: {
-    buttonIndex: Number,
-    buttonString: String
+    buttonNumber: Number,
+    buttonString: String,
+    buttonType: String
   }
 }
 </script>
